@@ -1,4 +1,4 @@
-package Slots;
+package Slot_Machine;
 
 import java.util.*;
 

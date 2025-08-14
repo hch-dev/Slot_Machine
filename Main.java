@@ -1,6 +1,6 @@
-package Slots;
+package Slot_Machine;
 
-class Slot_Machine {
+class Main {
 
     public static void main(String args[]) {
         Print pr = new Print();

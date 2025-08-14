@@ -1,6 +1,6 @@
-package Slots;
+package Slot_Machine;
 
-public class Symbols extends Slot_Machine {
+public class Symbols {
 
     public String symbol[];
 
