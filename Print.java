@@ -24,7 +24,11 @@ public class Print {
         while (true) {
             try {
                 System.out.print("Enter bet amount: ");
-                betamt = Double.parseDouble(in.nextLine());
+                String input = in.nextLine(); // Accepts the bet amount
+                if (!Character.isDigit(input.charAt(input.length() - 1)))
+                    throw new NumberFormatException("Error");
+                    //Checks if the last character is a digit
+                betamt = Double.parseDouble(input);
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Enter a valid number");
