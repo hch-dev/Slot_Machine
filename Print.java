@@ -34,12 +34,5 @@ public class Print {
                 System.out.println("Enter a valid number");
             }
         }
-
-        System.out.println("Enter 1 to spin the reels");
-        System.out.println("Enter 2 to exit");
-        int ch = in.nextInt();
-        if (ch == 3)
-            System.exit(0);
-        in.close();
     }
 }
