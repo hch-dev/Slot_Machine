@@ -56,7 +56,7 @@ public class Print {
         in.close();
     }
 
-    public void board() {
-
+    public void printboard() {
+        Random rand = new Random();
     }
 }
