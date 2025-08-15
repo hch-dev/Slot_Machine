@@ -4,6 +4,8 @@ class Main {
 
     public static void main(String args[]) {
         Print pr = new Print();
-        pr.details();
+        System.out.print("\033[H\033[2J"); // Clears terminal
+        System.out.flush();
+        System.out.println(pr.firstrun());
     }
 }

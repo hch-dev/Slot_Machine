@@ -11,7 +11,7 @@ public class Print {
         num = 0;
     }
 
-    public static String firstrun() {
+    public String firstrun() {
         return """
                 ******************************
                 ******** SLOT MACHINE ********
@@ -54,5 +54,9 @@ public class Print {
         } while (true);
         // Accepts only valid answers
         in.close();
+    }
+
+    public void board() {
+
     }
 }
