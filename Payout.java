@@ -10,6 +10,7 @@ public class Payout {
     Payout() {
         payout2 = 0.0;
 
+        payout3 = new HashMap<>();
         payout3.put("7️⃣", 500);
         payout3.put("💎", 200);
         payout3.put("🪙", 100);
