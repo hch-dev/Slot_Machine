@@ -14,15 +14,17 @@ public class Reel {
     Reel() {
         num_reels = 3;
 
-        sym = obj.symbol;
+        sym = Main.symbol;
+        
         reel_weights = new int[][] {
                 { 14, 51, 62, 102, 218, 304, 273 },
                 { 12, 48, 48, 96, 201, 315, 284 },
                 { 10, 49, 64, 94, 212, 308, 287 } };
 
+        buildreels();
     }
 
-    static {
+    void buildreels() {
         // Builds virtual reels according to the symbols and their weights
         for (int[] rw : reel_weights) {
             List<String> reel = new ArrayList<String>();

@@ -59,4 +59,4 @@ public class Print {
     public void printboard() {
         Random rand = new Random();
     }
-}
+}   
