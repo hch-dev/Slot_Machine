@@ -7,7 +7,7 @@ class Main {
     static String[] symbol;
 
     Main() {
-        String[] symbol = new String[] { "7️⃣", "💎", "🪙", "♠️", "🔔", "🧨", "🍒" };
+        final String[] symbol = new String[] { "7️⃣", "💎", "🪙", "♠️", "🔔", "🧨", "🍒" };
     }
 
     public static void main(String args[]) {
