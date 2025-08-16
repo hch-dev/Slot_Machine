@@ -22,7 +22,7 @@ public class Print {
     public void details() {
         Scanner in = new Scanner(System.in);
 
-        while (true) {
+        do {
             try {
                 System.out.print("Enter bet amount: ");
                 String input = in.nextLine(); // Accepts the bet amount
@@ -30,13 +30,17 @@ public class Print {
                     throw new NumberFormatException("Error");
                 // Checks if the last character is a digit
                 betamt = Double.parseDouble(input);
+                if(betamt < 1) {
+                    System.out.println("Bet amount should be greater than 0");
+                    throw new NumberFormatException("Bet amount less than 1");
+                }
                 break;
             } catch (NumberFormatException e) {
                 System.out.print("\033[H\033[2J"); //Clears terminal
                 System.out.flush();
                 System.out.println("Enter a valid number");
             }
-        }
+        } while(betamt < 1);
 
         do {
             System.out.println("Enter 1 to spin the reels");
