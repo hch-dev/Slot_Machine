@@ -27,7 +27,7 @@ public class Reel {
         for (int[] rw : reel_weights) {
             List<String> reel = new ArrayList<String>();
             for (int i = 0; i < sym.length; i++) {
-                for (int j = 0; j < rw.length; j++) {
+                for (int j = 0; j < rw[i]; j++) {
                     reel.add(sym[i]);
                 }
             }
