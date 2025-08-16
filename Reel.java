@@ -4,36 +4,35 @@ import java.util.*;
 
 public class Reel {
 
-    public HashMap<String, Integer> reel3;
-    public HashMap<String, Integer> reel2;
-    public HashMap<String, Integer> reel1;
+    public static int[][] reel_weights; // Weights of each symbol in each reel
+    public final int num_reels; // Number of reels
+    private static String[] sym;
+
+    Main obj = new Main();
+    static List<List<String>> Reel_build = new ArrayList<>();
 
     Reel() {
-        reel3 = new HashMap<>();
-        reel3.put("7️⃣", 10);
-        reel3.put("💎", 49);
-        reel3.put("🪙", 64);
-        reel3.put("♠️", 94);
-        reel3.put("🔔", 212);
-        reel3.put("🧨", 308);
-        reel3.put("🍒", 287);
+        num_reels = 3;
 
-        reel2 = new HashMap<>();
-        reel2.put("7️⃣", 12);
-        reel2.put("💎", 48);
-        reel2.put("🪙", 68);
-        reel2.put("♠️", 96);
-        reel2.put("🔔", 201);
-        reel2.put("🧨", 315);
-        reel2.put("🍒", 284);
+        sym = obj.symbol;
+        reel_weights = new int[][] {
+                { 14, 51, 62, 102, 218, 304, 273 },
+                { 12, 48, 48, 96, 201, 315, 284 },
+                { 10, 49, 64, 94, 212, 308, 287 } };
 
-        reel1 = new HashMap<>();
-        reel1.put("7️⃣", 14);
-        reel1.put("💎", 51);
-        reel1.put("🪙", 62);
-        reel1.put("♠️", 102);
-        reel1.put("🔔", 218);
-        reel1.put("🧨", 304);
-        reel1.put("🍒", 273);
+    }
+
+    static {
+        // Builds virtual reels according to the symbols and their weights
+        for (int[] rw : reel_weights) {
+            List<String> reel = new ArrayList<String>();
+            for (int i = 0; i < sym.length; i++) {
+                for (int j = 0; j < rw.length; j++) {
+                    reel.add(sym[i]);
+                }
+            }
+            Collections.shuffle(reel);
+            Reel_build.add(reel);
+        }
     }
 }
