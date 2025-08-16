@@ -15,10 +15,10 @@ public class Reel {
         num_reels = 3;
 
         sym = Main.symbol;
-        
+
         reel_weights = new int[][] {
                 { 14, 51, 62, 102, 218, 304, 273 },
-                { 12, 48, 48, 96, 201, 315, 284 },
+                { 12, 48, 68, 96, 201, 315, 284 },
                 { 10, 49, 64, 94, 212, 308, 287 } };
 
         buildreels();
