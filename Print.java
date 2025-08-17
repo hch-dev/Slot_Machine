@@ -81,11 +81,16 @@ public class Print {
 
         }
 
-        for (int i = 0; i < rl.num_reels; i++) {
-            List<String> creel = rl.Reel_build.get(i);
-            int reelsize = creel.size();
-            int symbolIndex = (positions[i] + 0 + reelsize) % reelsize; // Middle row (row=0)
-            winner[i] = creel.get(symbolIndex);
-        }
     }
-}
+
+    public String[] winsymbols(int[] positions) {
+        for (int i = 0; i < Reel.num_reels; i++) {
+            List<String> creel = Reel.Reel_build.get(i);
+            int reelsize = creel.size();
+            int symbolIndex = (positions[i] + 0 + reelsize) % reelsize;
+            // Middle row (row=0)
+            this.winner[i] = creel.get(symbolIndex);
+        }
+        return winner;
+    }
+}   
