@@ -77,7 +77,7 @@ public class Print {
                     System.out.print("| ");
                 else if (i == 1)
                     System.out.print(" | ");
-                System.out.print(creel.get(symbolIndex) + "  ");
+                System.out.printf("%-4s",creel.get(symbolIndex) + "  ");
                 if(i == 1)
                 System.out.print("|");
                 else if (i == 2)
