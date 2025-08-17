@@ -2,7 +2,7 @@ package Slot_Machine;
 
 import java.util.*;
 
-public class Reel extends Main{
+public class Reel extends Main {
 
     public static int[][] reel_weights; // Weights of each symbol in each reel
     public static int num_reels = 0;
@@ -51,9 +51,11 @@ public class Reel extends Main{
             // 30 is the maximum number of spins
             for (int j = 0; j < num_reels; j++) {
                 if (i < speed[j])
-                    // Checks if the current speed is less than the number of assigned speed to the reel
+                    // Checks if current speed is less than number assigned for speed to the reel
                     positions[j] = (positions[j] + 1) % Reel_build.get(j).size();
-                    // Gets the next symbol of the reel
+
+                // Gets the next symbol of the reel
+
             }
             pr.printboard(positions, this);
             Thread.sleep(100 + i * 5);
