@@ -4,9 +4,10 @@ import java.util.*;
 
 public class Print {
 
+    Reel rl = new Reel();
+
     static int num; // Number of games played
     double betamt; // Bet amount
-
     Print() {
         num = 0;
     }
@@ -30,17 +31,17 @@ public class Print {
                     throw new NumberFormatException("Error");
                 // Checks if the last character is a digit
                 betamt = Double.parseDouble(input);
-                if(betamt < 1) {
+                if (betamt < 1) {
                     System.out.println("Bet amount should be greater than 0");
                     throw new NumberFormatException("Bet amount less than 1");
                 }
                 break;
             } catch (NumberFormatException e) {
-                System.out.print("\033[H\033[2J"); //Clears terminal
+                System.out.print("\033[H\033[2J"); // Clears terminal
                 System.out.flush();
                 System.out.println("Enter a valid number");
             }
-        } while(betamt < 1);
+        } while (betamt < 1);
 
         do {
             System.out.println("Enter 1 to spin the reels");
@@ -51,7 +52,7 @@ public class Print {
             else if (input.equals("2"))
                 System.exit(0);
             else {
-                System.out.print("\033[H\033[2J"); //Clears terminal
+                System.out.print("\033[H\033[2J"); // Clears terminal
                 System.out.flush();
                 System.out.println("Enter a valid option");
             }
@@ -60,7 +61,21 @@ public class Print {
         in.close();
     }
 
-    public void printboard() {
-        Random rand = new Random();
+    public void printboard(int[] positions) {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        System.out.println("You bet: " + betamt);
+        System.out.println();
+        System.out.println();
+        System.out.println("-------------");
+
+        for (int row = -1; row < 2; row++) { // Loops through 3 rows (top, middle, bottom)
+            for(int i = 0; i<rl.num_reels; i++) { // Loops through each reel
+                List<String> creel = rl.Reel_build.get(i); // Stores each reel
+                int reelsize = creel.size();
+                int symbolIndex = (positions[i] + row + reelsize) % reelsize;
+                System.out.print(creel.get(symbolIndex) + "  ");
+            }
+        }
     }
-}   
+}

@@ -6,7 +6,7 @@ class Main {
 
     static String[] symbol = {"7️⃣", "💎", "🪙", "♠️", "🔔", "🧨", "🍒" };
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws InterruptedException {
         Reel pr = new Reel();
         System.out.print("\033[H\033[2J"); // Clears terminal
         System.out.flush();
@@ -24,6 +24,6 @@ class Main {
 
         Print obj = new Print();
 
-        obj.details();
+        System.out.println((pr.spinreels()));
     }
 }

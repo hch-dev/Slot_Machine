@@ -5,10 +5,10 @@ import java.util.*;
 public class Reel {
 
     public static int[][] reel_weights; // Weights of each symbol in each reel
-    public final int num_reels; // Number of reels
+    public static int num_reels = 0;
     private static String[] sym;
 
-    Main obj = new Main();
+    Print pr = new Print();
     static List<List<String>> Reel_build = new ArrayList<>();
 
     Reel() {
@@ -36,5 +36,32 @@ public class Reel {
             Collections.shuffle(reel);
             Reel_build.add(reel);
         }
+    }
+
+    int[] spinreels() throws InterruptedException { // For Thread.sleep()
+        Random rand = new Random();
+        int[] positions = new int[num_reels]; // Stores staring posiotion of reels
+        int[] speed = { 20, 25, 30 }; // Speed of each reel
+
+        for (int i = 0; i < num_reels; i++) { // Initializes the starting postion
+            positions[i] = rand.nextInt(Reel_build.get(i).size());
+        }
+
+        for (int i = 0; i < 30; i++) {
+            // 30 is the maximum number of spins
+            for (int j = 0; j < num_reels; j++) {
+                if (i < speed[j])
+                    // Checks if the current speed is less than the number of assigned speed to the reel
+                    positions[j] = (positions[j] + 1) % Reel_build.get(j).size();
+                    // Gets the next symbol of the reel
+            }
+            pr.printboard(positions);
+            Thread.sleep(100 + i * 6);
+        }
+
+        System.out.println("Final Result:");
+        pr.printboard(positions); // Display the final stationary result.
+        return positions;
+
     }
 }
