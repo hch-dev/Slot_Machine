@@ -6,9 +6,11 @@ public class Print {
 
     static int num; // Number of games played
     double betamt; // Bet amount
+    public String[] winner;
 
     Print() {
         num = 0;
+        winner = new String[3];
     }
 
     public String firstrun() {
@@ -73,19 +75,17 @@ public class Print {
                 List<String> creel = rl.Reel_build.get(i); // Stores each reel
                 int reelsize = creel.size();
                 int symbolIndex = (positions[i] + row + reelsize) % reelsize;
-                if (i == 0)
-                    System.out.print("| ");
-                else if (i == 1)
-                    System.out.print(" | ");
-                System.out.printf("%-4s",creel.get(symbolIndex) + "  ");
-                if(i == 1)
-                System.out.print("|");
-                else if (i == 2)
-                    System.out.print(" |");
+                System.out.print(creel.get(symbolIndex) + " ");
             }
-            System.out.println();
-        }
-        System.out.println("-------------");
+            System.out.println("-------------");
 
+        }
+
+        for (int i = 0; i < rl.num_reels; i++) {
+            List<String> creel = rl.Reel_build.get(i);
+            int reelsize = creel.size();
+            int symbolIndex = (positions[i] + 0 + reelsize) % reelsize; // Middle row (row=0)
+            winner[i] = creel.get(symbolIndex);
+        }
     }
 }

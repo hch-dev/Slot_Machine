@@ -11,5 +11,8 @@ class Main {
         Print obj = new Print();
 
         pr.spinreels();
+        for(int i = 0; i<3; i++) {
+            System.out.println(obj.winner[i]);
+        }
     }
 }

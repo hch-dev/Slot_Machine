@@ -58,7 +58,7 @@ public class Reel extends Main {
 
             }
             pr.printboard(positions, this);
-            Thread.sleep(100 + i * 5);
+            //Thread.sleep(100 + i * 5);
         }
 
         System.out.println("Final Result:");
