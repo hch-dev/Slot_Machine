@@ -52,9 +52,9 @@ public class Reel extends Main {
             for (int j = 0; j < num_reels; j++) {
                 if (i < speed[j])
                     // Checks if current speed is less than number assigned for speed to the reel
-                    positions[j] = (positions[j] + 1) % Reel_build.get(j).size();
-
-                // Gets the next symbol of the reel
+                    positions[j] = (positions[j] - 1 + Reel_build.get(j).size()) % Reel_build.get(j).size();
+                // Gets the previous symbol of the reel
+                // Makes it spin downwards
 
             }
             pr.printboard(positions, this);
