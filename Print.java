@@ -6,6 +6,7 @@ public class Print {
 
     static int num; // Number of games played
     double betamt; // Bet amount
+
     Print() {
         num = 0;
     }
@@ -68,13 +69,23 @@ public class Print {
         System.out.println("-------------");
 
         for (int row = -1; row < 2; row++) { // Loops through 3 rows (top, middle, bottom)
-            for(int i = 0; i<rl.num_reels; i++) { // Loops through each reel
+            for (int i = 0; i < rl.num_reels; i++) { // Loops through each reel
                 List<String> creel = rl.Reel_build.get(i); // Stores each reel
                 int reelsize = creel.size();
                 int symbolIndex = (positions[i] + row + reelsize) % reelsize;
+                if (i == 0)
+                    System.out.print("| ");
+                else if (i == 1)
+                    System.out.print(" | ");
                 System.out.print(creel.get(symbolIndex) + "  ");
+                if(i == 1)
+                System.out.print("|");
+                else if (i == 2)
+                    System.out.print(" |");
             }
             System.out.println();
         }
+        System.out.println("-------------");
+
     }
 }
