@@ -4,8 +4,6 @@ import java.util.*;
 
 public class Print {
 
-    Reel rl = new Reel();
-
     static int num; // Number of games played
     double betamt; // Bet amount
     Print() {
@@ -61,7 +59,7 @@ public class Print {
         in.close();
     }
 
-    public void printboard(int[] positions) {
+    public void printboard(int[] positions, Reel rl) {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("You bet: " + betamt);
@@ -76,6 +74,7 @@ public class Print {
                 int symbolIndex = (positions[i] + row + reelsize) % reelsize;
                 System.out.print(creel.get(symbolIndex) + "  ");
             }
+            System.out.println();
         }
     }
 }

@@ -2,7 +2,7 @@ package Slot_Machine;
 
 import java.util.*;
 
-public class Reel {
+public class Reel extends Main{
 
     public static int[][] reel_weights; // Weights of each symbol in each reel
     public static int num_reels = 0;
@@ -38,7 +38,7 @@ public class Reel {
         }
     }
 
-    int[] spinreels() throws InterruptedException { // For Thread.sleep()
+    public int[] spinreels() throws InterruptedException { // For Thread.sleep()
         Random rand = new Random();
         int[] positions = new int[num_reels]; // Stores staring posiotion of reels
         int[] speed = { 20, 25, 30 }; // Speed of each reel
@@ -55,12 +55,12 @@ public class Reel {
                     positions[j] = (positions[j] + 1) % Reel_build.get(j).size();
                     // Gets the next symbol of the reel
             }
-            pr.printboard(positions);
-            Thread.sleep(100 + i * 6);
+            pr.printboard(positions, this);
+            Thread.sleep(100 + i * 5);
         }
 
         System.out.println("Final Result:");
-        pr.printboard(positions); // Display the final stationary result.
+        pr.printboard(positions, this); // Display the final stationary result.
         return positions;
 
     }
