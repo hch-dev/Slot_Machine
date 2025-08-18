@@ -6,17 +6,15 @@ public class Print {
 
     static int num; // Number of games played
     double betamt; // Bet amount
-    String[] winner; // Stores winnig symbols
 
     Print() {
         num = 0;
-        winner = new String[3];
     }
 
     public String firstrun() {
         return """
                 ******************************
-                ******** SLOT MACHINE ********
+                ******* DESTINY SLOTS ********
                 ******************************
                 """;
     }
@@ -82,4 +80,4 @@ public class Print {
         }
 
     }
-}   
+}
