@@ -7,6 +7,7 @@ public class Payout {
     HashMap<String, Integer> payout3; // Stores payout structure
     double payout2; // Stores payout for 2 of a kind
     String type; // Stores the type of final result
+    Print pr = new Print();
 
     Payout() {
         this.payout2 = 1.17;
@@ -22,15 +23,17 @@ public class Payout {
     }
 
     void result(String[] win) {
-        if (win[0].equals(win[1]) && win[1].equals(win[2]))
+        if (win[0].equals(win[1]) && win[1].equals(win[2])) {
             type = "Three";
-        else if (!win[0].equals(win[1]) && !win[1].equals(win[2]) && !win[0].equals(win[2]))
+            pr.betamt = (double) (payout3.get(win[0])) * pr.betamt;
+            System.out.println("You won $" + pr.betamt);
+        } else if (!win[0].equals(win[1]) && !win[1].equals(win[2]) && !win[0].equals(win[2])) {
             type = "None";
-        else
+            System.out.println("You won nothing");
+        } else {
             type = "Two";
-    }
-
-    void finalamt() {
-        
+            pr.betamt = (double) (1.17 * pr.betamt);
+            System.out.println("You won $" + pr.betamt);
+        }
     }
 }

@@ -5,11 +5,12 @@ import java.util.*;
 public class Print {
 
     static int num; // Number of games played
-    double betamt; // Bet amount
+    public double betamt; // Bet amount
     public String[] winner;
 
     Print() {
         num = 0;
+        betamt = 100;
         winner = new String[3];
     }
 
