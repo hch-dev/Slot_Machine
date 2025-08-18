@@ -4,20 +4,21 @@ import java.util.*;
 
 public class Payout {
 
-    public static HashMap<String, Integer> payout3; // Stores payout structure
-    public static double payout2; // Stores payout for 2 of a kind
+    HashMap<String, Integer> payout3; // Stores payout structure
+    double payout2; // Stores payout for 2 of a kind
     String type; // Stores the type of final result
 
     Payout() {
-        payout2 = 0.0;
+        this.payout2 = 1.17;
 
-        payout3.put("7️⃣", 500);
-        payout3.put("💎", 200);
-        payout3.put("🪙", 100);
-        payout3.put("♠️", 68);
-        payout3.put("🔔", 20);
-        payout3.put("🧨", 10);
-        payout3.put("🍒", 5);
+        this.payout3 = new HashMap<>();
+        this.payout3.put("7️⃣", 500);
+        this.payout3.put("💎", 200);
+        this.payout3.put("🪙", 100);
+        this.payout3.put("♠️", 68);
+        this.payout3.put("🔔", 20);
+        this.payout3.put("🧨", 10);
+        this.payout3.put("🍒", 5);
     }
 
     void result(String[] win) {
@@ -27,5 +28,9 @@ public class Payout {
             type = "None";
         else
             type = "Two";
+    }
+
+    void finalamt() {
+        
     }
 }

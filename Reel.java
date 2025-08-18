@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Reel extends Main {
 
-    public static int[][] reel_weights; // Weights of each symbol in each reel
-    public static int num_reels = 0;
+    static int[][] reel_weights; // Weights of each symbol in each reel
+    static int num_reels = 0;
     private static String[] sym;
 
     Print pr = new Print();

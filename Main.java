@@ -17,6 +17,5 @@ class Main {
         System.out.println(win[2]);
 
         py.result(win);
-
     }
 }
