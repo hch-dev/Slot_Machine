@@ -6,7 +6,7 @@ public class Print {
 
     static int num; // Number of games played
     double betamt; // Bet amount
-    String[] winner;
+    String[] winner; // Stores winnig symbols
 
     Print() {
         num = 0;
@@ -27,7 +27,7 @@ public class Print {
         do {
             try {
                 System.out.print("Enter bet amount: ");
-                String input = in.nextLine(); // Accepts the bet amount
+                String input = in.nextLine().trim(); // Accepts the bet amount
                 if (!Character.isDigit(input.charAt(input.length() - 1)))
                     throw new NumberFormatException("Error");
                 // Checks if the last character is a digit
