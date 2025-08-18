@@ -9,11 +9,14 @@ class Main {
     public static void main(String args[]) throws InterruptedException {
         Reel rl = new Reel();
         Print pr = new Print();
-        
+        Payout py = new Payout();
+
         String[] win = rl.spinreels();
         System.out.println(win[0]);
         System.out.println(win[1]);
         System.out.println(win[2]);
+
+        py.result(win);
 
     }
 }
