@@ -7,12 +7,13 @@ class Main {
     static String[] symbol = { "7️⃣", "💎", "🪙", "♠️", "🔔", "🧨", "🍒" };
 
     public static void main(String args[]) throws InterruptedException {
-        Reel pr = new Reel();
-        Print obj = new Print();
+        Reel rl = new Reel();
+        Print pr = new Print();
+        
+        String[] win = rl.spinreels();
+        System.out.println(win[0]);
+        System.out.println(win[1]);
+        System.out.println(win[2]);
 
-        pr.spinreels();
-        for (int i = 0; i < 3; i++) {
-            // System.out.println(obj.winsymbols()[i]);
-        }
     }
 }

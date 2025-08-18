@@ -38,7 +38,7 @@ public class Reel extends Main {
         }
     }
 
-    public int[] spinreels() throws InterruptedException { // For Thread.sleep()
+    public String[] spinreels() throws InterruptedException { // For Thread.sleep()
         Random rand = new Random();
         int[] positions = new int[num_reels]; // Stores staring posiotion of reels
         int[] speed = { 20, 25, 30 }; // Speed of each reel
@@ -58,12 +58,16 @@ public class Reel extends Main {
 
             }
             pr.printboard(positions, this);
-            //Thread.sleep(100 + i * 5);
+            Thread.sleep(100 + i * 5);
         }
 
         System.out.println("Final Result:");
         pr.printboard(positions, this); // Display the final stationary result.
-        return positions;
+        String[] result = new String[num_reels];
+        for (int i = 0; i < num_reels; i++) {
+            result[i] = Reel_build.get(i).get(positions[i]);
+        }
 
+        return result; // return final symbols
     }
 }
