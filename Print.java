@@ -5,12 +5,11 @@ import java.util.*;
 public class Print {
 
     static int num; // Number of games played
-    public double betamt; // Bet amount
-    public String[] winner;
+    double betamt; // Bet amount
+    String[] winner;
 
     Print() {
         num = 0;
-        betamt = 100;
         winner = new String[3];
     }
 
@@ -32,7 +31,7 @@ public class Print {
                 if (!Character.isDigit(input.charAt(input.length() - 1)))
                     throw new NumberFormatException("Error");
                 // Checks if the last character is a digit
-                betamt = Double.parseDouble(input);
+                this.betamt = Double.parseDouble(input);
                 if (betamt < 1) {
                     System.out.println("Bet amount should be greater than 0");
                     throw new NumberFormatException("Bet amount less than 1");
@@ -66,7 +65,7 @@ public class Print {
     public void printboard(int[] positions, Reel rl) {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("You bet: " + betamt);
+        System.out.println("You bet: " + this.betamt);
         System.out.println();
         System.out.println();
         System.out.println("-------------");

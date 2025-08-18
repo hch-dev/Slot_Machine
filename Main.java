@@ -11,7 +11,7 @@ class Main {
         Print pr = new Print();
         Payout py = new Payout();
 
-        pr.firstrun();
+        System.out.println(pr.firstrun());
         pr.details();
 
         String[] win = rl.spinreels();
