@@ -20,26 +20,50 @@ class Print {
                 """;
     }
 
-    void balance(Scanner in) {
-        do {
-            try {
-                System.out.print("Enter your balance: ");
-                String input = in.nextLine().trim(); // Accepts balance
-                if (!Character.isDigit(input.charAt(input.length() - 1)))
-                    throw new NumberFormatException("Error");
-                // Checks if the last character is a digit
-                this.balance = Double.parseDouble(input);
-                if (balance <= 0) {
-                    System.out.println("Balance should be greater than 0");
-                    throw new NumberFormatException("Balance amount less than 0");
+    void balance(Scanner in, int a) { //Method to manage balance
+        if (a == 1) {
+            do {
+                try {
+                    System.out.print("Enter your balance: ");
+                    String input = in.nextLine().trim(); // Accepts balance
+                    if (!Character.isDigit(input.charAt(input.length() - 1)))
+                        throw new NumberFormatException("Error");
+                    // Checks if the last character is a digit
+                    this.balance = Double.parseDouble(input);
+                    if (balance <= 0) {
+                        System.out.println("Balance should be greater than 0");
+                        throw new NumberFormatException("Balance amount less than 0");
+                    }
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.print("\033[H\033[2J"); // Clears terminal
+                    System.out.flush();
+                    System.out.println("Enter a valid number");
                 }
-                break;
-            } catch (NumberFormatException e) {
-                System.out.print("\033[H\033[2J"); // Clears terminal
-                System.out.flush();
-                System.out.println("Enter a valid number");
-            }
-        } while (balance <= 0);
+            } while (balance <= 0);
+        }
+
+        else {
+            do {
+                try {
+                    System.out.print("Enter amount to add to balance: ");
+                    String input = in.nextLine().trim(); // Accepts balance
+                    if (!Character.isDigit(input.charAt(input.length() - 1)))
+                        throw new NumberFormatException("Error");
+                    // Checks if the last character is a digit
+                    this.balance += Double.parseDouble(input);
+                    if (balance <= 0) {
+                        System.out.println("Balance should be greater than 0");
+                        throw new NumberFormatException("Balance amount less than 0");
+                    }
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.print("\033[H\033[2J"); // Clears terminal
+                    System.out.flush();
+                    System.out.println("Enter a valid number");
+                }
+            } while (balance <= 0);
+        }
     }
 
     void details(Scanner in) {
@@ -76,7 +100,7 @@ class Print {
             if (input.equals("1"))
                 break;
             else if (input.equals("2")) {
-                System.out.println("Enter amount to add to your balance");
+                balance(in, 2);
             } else if (input.equals("3"))
                 System.exit(0);
             else {
