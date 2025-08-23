@@ -23,7 +23,7 @@ class Print {
     void balance(Scanner in) {
         do {
             try {
-                System.out.print("Enter your total balance: ");
+                System.out.print("Enter your balance: ");
                 String input = in.nextLine().trim(); // Accepts balance
                 if (!Character.isDigit(input.charAt(input.length() - 1)))
                     throw new NumberFormatException("Error");
@@ -45,7 +45,7 @@ class Print {
     void details(Scanner in) {
         do {
             try {
-                System.out.println("Enter your bet amount from your total balance");
+                System.out.print("Enter your bet amount from your total balance: ");
                 String input = in.nextLine().trim();
                 if (!Character.isDigit(input.charAt(input.length() - 1)))
                     throw new NumberFormatException("Error");
@@ -75,9 +75,9 @@ class Print {
             String input = in.nextLine();
             if (input.equals("1"))
                 break;
-            else if (input.equals("2"))
-                balance(in);
-            else if (input.equals("3"))
+            else if (input.equals("2")) {
+                System.out.println("Enter amount to add to your balance");
+            } else if (input.equals("3"))
                 System.exit(0);
             else {
                 System.out.print("\033[H\033[2J"); // Clears terminal
