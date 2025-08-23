@@ -9,7 +9,7 @@ class Payout {
     Print pr;
 
     Payout(Print pr) {
-        pr = this.pr;
+        this.pr = pr;
         this.payout2 = 1.17;
 
         this.payout3 = new HashMap<>();

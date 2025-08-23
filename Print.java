@@ -9,7 +9,6 @@ class Print {
 
     Print() {
         num = 0;
-        betamt = 0;
     }
 
     public String firstrun() {

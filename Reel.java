@@ -12,7 +12,7 @@ class Reel extends Main {
     static List<List<String>> Reel_build = new ArrayList<>();
 
     Reel(Print pr) {
-        pr = this.pr;
+        this.pr = pr;
         num_reels = 3;
 
         sym = Main.symbol;
