@@ -2,7 +2,7 @@ package Slot_Machine;
 
 import java.util.*;
 
-public class Reel extends Main {
+class Reel extends Main {
 
     static int[][] reel_weights; // Weights of each symbol in each reel
     static int num_reels = 0;

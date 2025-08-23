@@ -2,7 +2,7 @@ package Slot_Machine;
 
 import java.util.*;
 
-public class Print {
+class Print {
 
     static int num; // Number of games played
     double betamt; // Bet amount
@@ -19,7 +19,7 @@ public class Print {
                 """;
     }
 
-    public void details() {
+    void details() {
         Scanner in = new Scanner(System.in);
 
         do {
@@ -60,7 +60,7 @@ public class Print {
         in.close();
     }
 
-    public void printboard(int[] positions, Reel rl) {
+    void printboard(int[] positions, Reel rl) {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("You bet: " + this.betamt);

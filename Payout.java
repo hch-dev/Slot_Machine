@@ -2,7 +2,7 @@ package Slot_Machine;
 
 import java.util.*;
 
-public class Payout {
+class Payout {
 
     HashMap<String, Integer> payout3; // Stores payout structure
     double payout2; // Stores payout for 2 of a kind
