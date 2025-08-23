@@ -8,10 +8,11 @@ class Reel extends Main {
     static int num_reels = 0;
     private static String[] sym;
 
-    Print pr = new Print();
+    Print pr;
     static List<List<String>> Reel_build = new ArrayList<>();
 
-    Reel() {
+    Reel(Print pr) {
+        pr = this.pr;
         num_reels = 3;
 
         sym = Main.symbol;

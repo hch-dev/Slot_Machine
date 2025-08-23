@@ -9,6 +9,7 @@ class Print {
 
     Print() {
         num = 0;
+        betamt = 0;
     }
 
     public String firstrun() {
@@ -19,9 +20,7 @@ class Print {
                 """;
     }
 
-    void details() {
-        Scanner in = new Scanner(System.in);
-
+    void details(Scanner in) {
         do {
             try {
                 System.out.print("Enter bet amount: ");
@@ -40,7 +39,7 @@ class Print {
                 System.out.flush();
                 System.out.println("Enter a valid number");
             }
-        } while (betamt < 1);
+        } while (betamt <= 0);
 
         do {
             System.out.println("Enter 1 to spin the reels");
@@ -57,7 +56,6 @@ class Print {
             }
         } while (true);
         // Accepts only valid answers
-        in.close();
     }
 
     void printboard(int[] positions, Reel rl) {
@@ -76,8 +74,6 @@ class Print {
                 System.out.print(creel.get(symbolIndex) + " ");
             }
             System.out.println("-------------");
-
         }
-
     }
 }
