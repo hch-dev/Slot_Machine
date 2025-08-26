@@ -20,7 +20,7 @@ class Print {
                 """;
     }
 
-    void balance(Scanner in, int a) { //Method to manage balance
+    void balance(Scanner in, int a) { // Method to manage balance
         if (a == 1) {
             do {
                 try {
@@ -29,11 +29,11 @@ class Print {
                     if (!Character.isDigit(input.charAt(input.length() - 1)))
                         throw new NumberFormatException("Error");
                     // Checks if the last character is a digit
+                    this.balance = Double.parseDouble(input);
                     if (balance <= 0) {
                         System.out.println("Balance should be greater than 0");
                         throw new NumberFormatException("Balance amount less than 0");
                     }
-                    this.balance = Double.parseDouble(input);
                     break;
                 } catch (NumberFormatException e) {
                     System.out.print("\033[H\033[2J"); // Clears terminal
@@ -51,11 +51,11 @@ class Print {
                     if (!Character.isDigit(input.charAt(input.length() - 1)))
                         throw new NumberFormatException("Error");
                     // Checks if the last character is a digit
+                    this.balance += Double.parseDouble(input);
                     if (balance <= 0) {
                         System.out.println("Balance should be greater than 0");
                         throw new NumberFormatException("Balance amount less than 0");
                     }
-                    this.balance += Double.parseDouble(input);
                     break;
                 } catch (NumberFormatException e) {
                     System.out.print("\033[H\033[2J"); // Clears terminal
