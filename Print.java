@@ -127,7 +127,7 @@ class Print {
                 int symbolIndex = (positions[i] + row + reelsize) % reelsize;
                 System.out.print(creel.get(symbolIndex) + " ");
             }
-            System.out.println("-------------");
+            System.out.println();
         }
     }
 }
