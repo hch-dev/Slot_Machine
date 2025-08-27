@@ -31,5 +31,3 @@ This project does not rely only on random spins, it also implements the **mathem
 
 - **Expected Value (EV):**  
   The return-to-player (RTP) percentage is considered to simulate realistic slot machine behavior.  
-
----
