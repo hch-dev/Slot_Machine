@@ -14,7 +14,6 @@ class Main {
         Payout py = new Payout(pr);
 
         System.out.println(pr.firstrun());
-        pr.balance(in, 1);
         pr.details(in);
 
         String[] win = rl.spinreels();
