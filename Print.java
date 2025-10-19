@@ -12,11 +12,14 @@ class Print {
     }
 
     public String firstrun() {
-        return """
+        return  """
                 ******************************
                 ******* DESTINY SLOTS ********
                 ******************************
                 """;
+    }
+    void betamt() {
+        
     }
 
     void details(Scanner in) {
