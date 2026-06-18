@@ -4,7 +4,7 @@ import java.util.*;
 
 class Reel extends Main {
 
-    static int[][] reel_weights; // Weights of each symbol in each reel
+    static int[][] reel_weights;
     static int num_reels = 0;
     private static String[] sym;
 
@@ -26,7 +26,6 @@ class Reel extends Main {
     }
 
     void buildreels() {
-        // Builds virtual reels according to the symbols and their weights
         for (int[] rw : reel_weights) {
             List<String> reel = new ArrayList<String>();
             for (int i = 0; i < sym.length; i++) {
@@ -39,36 +38,31 @@ class Reel extends Main {
         }
     }
 
-    public String[] spinreels() throws InterruptedException { // For Thread.sleep()
+    public String[] spinreels() throws InterruptedException {
         Random rand = new Random();
-        int[] positions = new int[num_reels]; // Stores staring posiotion of reels
-        int[] speed = { 20, 25, 30 }; // Speed of each reel
+        int[] positions = new int[num_reels];
+        int[] speed = { 20, 25, 30 };
 
-        for (int i = 0; i < num_reels; i++) { // Initializes the starting postion
+        for (int i = 0; i < num_reels; i++) {
             positions[i] = rand.nextInt(Reel_build.get(i).size());
         }
 
         for (int i = 0; i < 30; i++) {
-            // 30 is the maximum number of spins
             for (int j = 0; j < num_reels; j++) {
                 if (i < speed[j])
-                    // Checks if current speed is less than number assigned for speed to the reel
                     positions[j] = (positions[j] - 1 + Reel_build.get(j).size()) % Reel_build.get(j).size();
-                // Gets the previous symbol of the reel
-                // Makes it spin downwards
-
             }
             pr.printboard(positions, this);
             Thread.sleep(100 + i * 5);
         }
 
         System.out.println("Final Result:");
-        pr.printboard(positions, this); // Display the final stationary result.
+        pr.printboard(positions, this);
         String[] result = new String[num_reels];
         for (int i = 0; i < num_reels; i++) {
             result[i] = Reel_build.get(i).get(positions[i]);
         }
 
-        return result; // return final symbols
+        return result;
     }
 }

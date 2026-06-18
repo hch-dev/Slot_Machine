@@ -4,8 +4,8 @@ import java.util.*;
 
 class Payout {
 
-    HashMap<String, Integer> payout3; // Stores payout structure
-    double payout2; // Stores payout for 2 of a kind
+    HashMap<String, Integer> payout3;
+    double payout2;
     Print pr;
 
     Payout(Print pr) {
@@ -24,13 +24,15 @@ class Payout {
 
     void result(String[] win) {
         if (win[0].equals(win[1]) && win[1].equals(win[2])) {
-            pr.betamt = (double) (payout3.get(win[0])) * pr.betamt;
-            System.out.println("You won $" + pr.betamt);
+            double winnings = (double) (payout3.get(win[0])) * pr.betamt;
+            pr.balance += winnings;
+            System.out.println("You won $" + winnings);
         } else if (!win[0].equals(win[1]) && !win[1].equals(win[2]) && !win[0].equals(win[2])) {
-            System.out.printf("You lose "+ pr.betamt);
+            System.out.println("You lose $" + pr.betamt);
         } else {
-            pr.betamt = (double) (1.17 * pr.betamt);
-            System.out.println("You won $" + pr.betamt);
+            double winnings = (double) (payout2 * pr.betamt);
+            pr.balance += winnings;
+            System.out.println("You won $" + winnings);
         }
     }
 }
